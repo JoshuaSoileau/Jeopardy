@@ -1,17 +1,18 @@
 /* eslint-disable no-restricted-globals */
 import React from "react";
 import { GlobalStyles } from "twin.macro";
+import Board from "./components/Board";
+import { GameProvider } from "./providers/GameProvider";
 
 function App() {
   return (
-    <div>
+    <GameProvider>
       <GlobalStyles />
-      <div tw="h-screen flex items-center justify-center bg-gray-900">
-        <h1 tw="text-white text-xl  rounded-lg  p-12  bg-gray-700">
-          This is a creat-react-app with Tailwind and Twin.Macro!
-        </h1>
+      <div tw="min-h-screen  flex flex-col  items-center justify-center  bg-gray-900">
+        <h1 tw="text-white text-xl">Web Dev Jeopardy!</h1>
+        <Board />
       </div>
-    </div>
+    </GameProvider>
   );
 }
 
