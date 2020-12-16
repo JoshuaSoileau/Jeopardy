@@ -5,7 +5,7 @@ import tw, { css } from "twin.macro";
 const Board = () => {
   const questionButtons = useRef(new Array(99));
   const gridRef = useRef(null);
-  const { questions, setQuestions } = useGame();
+  const { questions } = useGame();
   const [panelStyle, setPanelStyle] = useState({
     top: 0,
     left: 0,
@@ -15,6 +15,8 @@ const Board = () => {
   const [activeCategory, setActiveCategory] = useState("");
   const [activeNumber, setActiveNumber] = useState("");
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
+  const [answerVisible, setAnswerVisible] = useState(false);
+
   const categories = Object.keys(questions);
 
   const shiftToLocation = ({ target, duration = 0, ...additional }) => {
@@ -34,19 +36,30 @@ const Board = () => {
   };
 
   const openPanelFrom = (target) => {
-    shiftToLocation({ target, transform: "rotateY(180deg)", opacity: 1 });
+    shiftToLocation({
+      target,
+      transform: "rotateY(180deg)",
+      opacity: 1,
+      pointerEvents: "initial",
+    });
 
     setTimeout(() => {
-      shiftToLocation({ target: gridRef.current, duration: 1000, opacity: 1 });
+      shiftToLocation({
+        target: gridRef.current,
+        duration: 1000,
+        opacity: 1,
+        pointerEvents: "initial",
+      });
     }, 500);
   };
 
   const closePanelTo = (target) => {
     shiftToLocation({
       target,
-      transform: "rotateY(180deg)",
       duration: 1000,
+      transform: "rotateY(180deg)",
       opacity: 1,
+      pointerEvents: "none",
     });
 
     setTimeout(() => {
@@ -55,6 +68,7 @@ const Board = () => {
         transform: "rotateY(180deg)",
         duration: 0,
         opacity: 0,
+        pointerEvents: "none",
       });
     }, 1000 + 100);
   };
@@ -81,15 +95,16 @@ const Board = () => {
           return Object.entries(data).map(
             ([number, questionObject], rowIndex) => {
               const gridNumber = columnIndex * 5 + rowIndex;
-              const { question, answer } = questionObject;
+              const { question } = questionObject;
 
               return (
                 <li key={question}>
                   <button
                     ref={(el) => (questionButtons.current[gridNumber] = el)}
                     type="button"
-                    tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-600  text-white text-4xl break-words"
+                    tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-600  text-yellow-200 text-4xl break-words"
                     onClick={() => {
+                      setAnswerVisible(false);
                       setActiveNumber(number);
                       setActiveCategory(category);
                       setActiveButtonNumber(gridNumber);
@@ -107,9 +122,10 @@ const Board = () => {
       <div
         className="panel"
         css={[
-          tw`absolute transition-all ease-in-out`,
+          tw`absolute transition-all ease-in-out overflow-hidden`,
           css`
             transform-style: preserve-3d;
+            perspective: 1000px;
           `,
         ]}
         style={panelStyle}
@@ -118,7 +134,7 @@ const Board = () => {
           <div
             className="front"
             css={[
-              tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-600  text-white text-4xl break-words`,
+              tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-600  text-yellow-400 font-bold text-4xl break-words`,
               css`
                 transform: rotateY(180deg);
                 backface-visibility: hidden;
@@ -130,7 +146,7 @@ const Board = () => {
           <div
             className="back"
             css={[
-              tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-600 transition-all ease-in-out    text-white text-4xl`,
+              tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-600 transition-all ease-in-out    text-white text-4xl px-12`,
               css`
                 backface-visibility: hidden;
               `,
@@ -145,6 +161,20 @@ const Board = () => {
             >
               {questions?.[activeCategory]?.[activeNumber]?.question}
             </button>
+            <div tw="mt-16">
+              {answerVisible ? (
+                questions?.[activeCategory]?.[activeNumber]?.answer
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAnswerVisible(true);
+                  }}
+                >
+                  Show answer
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
