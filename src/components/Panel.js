@@ -15,22 +15,22 @@ const Panel = ({
     <div
       className="panel"
       css={[
-        tw`absolute transition-all ease-in-out overflow-hidden font-serif`,
+        tw`absolute transition-all ease-in-out overflow-hidden inset-0`,
         css`
           & {
-            transform-style: preserve-3d;
+            /* transform-style: preserve-3d; */
             perspective: 1000px;
+            ${!activeNumber ? "pointer-events: none;" : ""}
           }
         `,
       ]}
-      style={panelStyle}
     >
-      <div tw="relative h-full">
+      <div tw="relative h-full" style={panelStyle}>
         {/* FRONT */}
         <div
           className="front"
           css={[
-            tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-800  text-yellow-400 font-bold text-4xl break-words`,
+            tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  min-h-48  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words`,
             css`
               & {
                 transform: rotateY(180deg);
@@ -46,7 +46,7 @@ const Panel = ({
         <div
           className="back"
           css={[
-            tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-800 transition-all ease-in-out    text-white text-4xl px-12`,
+            tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-700 transition-all ease-in-out    text-white text-4xl px-12   font-serif`,
             css`
               & {
                 backface-visibility: hidden;

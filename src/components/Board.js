@@ -3,6 +3,9 @@ import { useGame } from "../providers/GameProvider";
 import "twin.macro";
 import Panel from "./Panel";
 
+const OPEN_TIMING = 500;
+const CLOSE_TIMING = 1000 + 100;
+
 const Board = () => {
   const questionButtons = useRef(new Array(99));
   const gridRef = useRef(null);
@@ -12,19 +15,18 @@ const Board = () => {
     left: 0,
     width: "0",
     height: "0",
+    transformStyle: "preserve-3d",
+    transform: "rotateY(180deg)",
   });
   const [activeCategory, setActiveCategory] = useState("");
-  const [activeNumber, setActiveNumber] = useState("");
+  const [activeNumber, setActiveNumber] = useState(0);
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
 
   const CATEGORIES = Object.keys(questions);
-  console.log({ CATEGORIES });
   const QUESTIONS_PER_CATEGORY = Object.keys(questions[CATEGORIES[0]]).length;
-  console.log({ QUESTIONS_PER_CATEGORY });
   const VALUES = [...Array(QUESTIONS_PER_CATEGORY)].map((_, index) =>
     String(index * 100 + 100)
   );
-  console.log({ VALUES });
 
   const shiftToLocation = ({ target, duration = 0, ...additional }) => {
     const top = target.offsetTop;
@@ -57,7 +59,7 @@ const Board = () => {
         opacity: 1,
         pointerEvents: "initial",
       });
-    }, 500);
+    }, OPEN_TIMING);
   };
 
   const closePanelTo = (target) => {
@@ -77,7 +79,7 @@ const Board = () => {
         opacity: 0,
         pointerEvents: "none",
       });
-    }, 1000 + 100);
+    }, CLOSE_TIMING);
   };
 
   return (
@@ -89,7 +91,7 @@ const Board = () => {
         {/* Titles */}
         {CATEGORIES.map((category) => (
           <li key={category}>
-            <div tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-white text-4xl break-words">
+            <div tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-700  text-white text-4xl break-words">
               {category}
             </div>
           </li>
@@ -105,7 +107,7 @@ const Board = () => {
                 <button
                   ref={(el) => (questionButtons.current[gridNumber] = el)}
                   type="button"
-                  tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-yellow-300 text-4xl break-words"
+                  tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words"
                   onClick={() => {
                     setActiveNumber(value);
                     setActiveCategory(category);
@@ -119,13 +121,6 @@ const Board = () => {
             );
           })
         )}
-
-        {/* Columns */}
-        {Object.entries(questions).map(([category, data], columnIndex) => {
-          return Object.entries(
-            data
-          ).map(([number, questionObject], rowIndex) => {});
-        })}
       </ul>
       <Panel
         activeNumber={activeNumber}
@@ -134,6 +129,8 @@ const Board = () => {
         close={() => {
           const buttonRef = questionButtons.current[activeButtonNumber];
           closePanelTo(buttonRef);
+
+          setTimeout(() => setActiveNumber(0), CLOSE_TIMING);
         }}
       />
     </div>
