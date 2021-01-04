@@ -79,18 +79,16 @@ const Board = () => {
         tw="grid grid-cols-5 gap-2  list-none  m-0 p-0 max-w-5xl"
         ref={gridRef}
       >
+        {/* Titles */}
         {categories.map((category) => (
           <li key={category}>
-            <button
-              type="button"
-              onClick={() => {}}
-              tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-600  text-white text-4xl break-words"
-            >
+            <div tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-white text-4xl break-words">
               {category}
-            </button>
+            </div>
           </li>
         ))}
 
+        {/* Columns */}
         {Object.entries(questions).map(([category, data], columnIndex) => {
           return Object.entries(data).map(
             ([number, questionObject], rowIndex) => {
@@ -98,11 +96,11 @@ const Board = () => {
               const { question } = questionObject;
 
               return (
-                <li key={question}>
+                <li key={question} data-category={category} data-value={number}>
                   <button
                     ref={(el) => (questionButtons.current[gridNumber] = el)}
                     type="button"
-                    tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-600  text-yellow-200 text-4xl break-words"
+                    tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-yellow-300 text-4xl break-words"
                     onClick={() => {
                       setAnswerVisible(false);
                       setActiveNumber(number);
@@ -122,7 +120,7 @@ const Board = () => {
       <div
         className="panel"
         css={[
-          tw`absolute transition-all ease-in-out overflow-hidden`,
+          tw`absolute transition-all ease-in-out overflow-hidden font-serif`,
           css`
             transform-style: preserve-3d;
             perspective: 1000px;
@@ -134,7 +132,7 @@ const Board = () => {
           <div
             className="front"
             css={[
-              tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-600  text-yellow-400 font-bold text-4xl break-words`,
+              tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-800  text-yellow-400 font-bold text-4xl break-words`,
               css`
                 transform: rotateY(180deg);
                 backface-visibility: hidden;
@@ -146,7 +144,7 @@ const Board = () => {
           <div
             className="back"
             css={[
-              tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-600 transition-all ease-in-out    text-white text-4xl px-12`,
+              tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-800 transition-all ease-in-out    text-white text-4xl px-12`,
               css`
                 backface-visibility: hidden;
               `,
@@ -167,6 +165,7 @@ const Board = () => {
               ) : (
                 <button
                   type="button"
+                  tw="underline"
                   onClick={() => {
                     setAnswerVisible(true);
                   }}
