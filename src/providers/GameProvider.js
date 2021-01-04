@@ -9,9 +9,32 @@ const GameContext = React.createContext({
 
 export const GameProvider = ({ children }) => {
   const [questions, setQuestions] = useLocalStorage("questions", Qs);
+  const [activeCategory, setActiveCategory] = useLocalStorage(
+    "activeCategory",
+    ""
+  );
+  const [activeNumber, setActiveNumber] = useLocalStorage("activeNumber", 0);
+  const [activeButtonNumber, setActiveButtonNumber] = useLocalStorage(
+    "activeButtonNumber",
+    0
+  );
 
   return (
-    <GameContext.Provider value={{ questions, setQuestions }}>
+    <GameContext.Provider
+      value={{
+        questions,
+        setQuestions,
+
+        activeCategory,
+        setActiveCategory,
+
+        activeNumber,
+        setActiveNumber,
+
+        activeButtonNumber,
+        setActiveButtonNumber,
+      }}
+    >
       {children}
     </GameContext.Provider>
   );

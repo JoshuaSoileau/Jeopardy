@@ -9,7 +9,15 @@ const CLOSE_TIMING = 1000 + 100;
 const Board = () => {
   const questionButtons = useRef(new Array(99));
   const gridRef = useRef(null);
-  const { questions } = useGame();
+  const {
+    questions,
+
+    setActiveCategory,
+    setActiveNumber,
+
+    activeButtonNumber,
+    setActiveButtonNumber,
+  } = useGame();
   const [panelStyle, setPanelStyle] = useState({
     top: 0,
     left: 0,
@@ -18,9 +26,6 @@ const Board = () => {
     transformStyle: "preserve-3d",
     transform: "rotateY(180deg)",
   });
-  const [activeCategory, setActiveCategory] = useState("");
-  const [activeNumber, setActiveNumber] = useState(0);
-  const [activeButtonNumber, setActiveButtonNumber] = useState(0);
 
   const CATEGORIES = Object.keys(questions);
   const QUESTIONS_PER_CATEGORY = Object.keys(questions[CATEGORIES[0]]).length;
@@ -123,8 +128,6 @@ const Board = () => {
         )}
       </ul>
       <Panel
-        activeNumber={activeNumber}
-        activeCategory={activeCategory}
         panelStyle={panelStyle}
         close={() => {
           const buttonRef = questionButtons.current[activeButtonNumber];

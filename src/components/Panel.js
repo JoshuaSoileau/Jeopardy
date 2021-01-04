@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import tw, { css } from "twin.macro";
 import { useGame } from "../providers/GameProvider";
+import PanelContent from "./PanelContent";
 
-const Panel = ({
-  activeNumber = "",
-  activeCategory = "",
-  panelStyle = {},
-  close = () => {},
-}) => {
-  const { questions } = useGame();
-  const [answerVisible, setAnswerVisible] = useState(false);
+const Panel = ({ panelStyle = {}, close = () => {} }) => {
+  const { activeNumber } = useGame();
 
   return (
     <div
@@ -46,7 +41,7 @@ const Panel = ({
         <div
           className="back"
           css={[
-            tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-700 transition-all ease-in-out    text-white text-4xl px-12   font-serif`,
+            tw`absolute top-0 left-0  h-full w-full bg-blue-700 transition-all ease-in-out    text-white text-4xl px-12   font-serif`,
             css`
               & {
                 backface-visibility: hidden;
@@ -54,30 +49,7 @@ const Panel = ({
             `,
           ]}
         >
-          <button
-            type="button"
-            onClick={() => {
-              setAnswerVisible(false);
-              close();
-            }}
-          >
-            {questions?.[activeCategory]?.[activeNumber]?.question}
-          </button>
-          <div tw="mt-16">
-            {answerVisible ? (
-              questions?.[activeCategory]?.[activeNumber]?.answer
-            ) : (
-              <button
-                type="button"
-                tw="underline"
-                onClick={() => {
-                  setAnswerVisible(true);
-                }}
-              >
-                Show answer
-              </button>
-            )}
-          </div>
+          <PanelContent close={close} />
         </div>
       </div>
     </div>

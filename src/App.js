@@ -10,7 +10,16 @@ function App() {
   return (
     <GameProvider>
       <GlobalStyles />
-      <div tw="min-h-screen  flex flex-col  justify-center  bg-gray-900 px-4">
+      <div
+        tw="min-h-screen  flex flex-col  justify-center  bg-gray-900 px-4"
+        css={[
+          css`
+            & {
+              background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+            }
+          `,
+        ]}
+      >
         <h1 tw="flex flex-row items-center  text-white text-xl text-8xl font-extrabold mb-16">
           <span
             css={[
