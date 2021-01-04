@@ -20,27 +20,29 @@ function App() {
           `,
         ]}
       >
-        <h1 tw="flex flex-row items-center  text-white text-xl text-8xl font-extrabold mb-16">
-          <span
-            css={[
-              css`
-                & {
-                  text-shadow: -${OFFSET} -${OFFSET} 0 ${OUTLINE},
-                    -${OFFSET} ${OFFSET} 0 ${OUTLINE},
-                    ${OFFSET} -${OFFSET} 0 ${OUTLINE},
-                    ${OFFSET} ${OFFSET} 0 ${OUTLINE};
-                }
-              `,
-            ]}
-          >
-            Jeopardy!
-          </span>
-          <div tw="text-3xl ml-12">
-            <div>Web-dev</div>
-            <div>edition</div>
-          </div>
-        </h1>
-        <Board />
+        <div tw="w-12xl mx-auto">
+          <h1 tw="flex flex-row items-center  text-white text-xl text-8xl font-extrabold mb-16">
+            <span
+              css={[
+                css`
+                  & {
+                    text-shadow: -${OFFSET} -${OFFSET} 0 ${OUTLINE},
+                      -${OFFSET} ${OFFSET} 0 ${OUTLINE},
+                      ${OFFSET} -${OFFSET} 0 ${OUTLINE},
+                      ${OFFSET} ${OFFSET} 0 ${OUTLINE};
+                  }
+                `,
+              ]}
+            >
+              Jeopardy!
+            </span>
+            <div tw="text-3xl ml-12">
+              <div>Web-dev</div>
+              <div>edition</div>
+            </div>
+          </h1>
+          <Board />
+        </div>
       </div>
     </GameProvider>
   );

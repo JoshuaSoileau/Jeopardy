@@ -123,6 +123,11 @@ module.exports = {
         ...theme("screens"),
         "1/2": "50%",
         "2/3": "66.66%",
+        "8xl": "88rem",
+        "9xl": "96rem",
+        "10xl": "104rem",
+        "11xl": "112rem",
+        "12xl": "120rem",
       }),
       transitionProperty: {
         height: "height",

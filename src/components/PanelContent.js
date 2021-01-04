@@ -3,11 +3,11 @@ import { css } from "twin.macro";
 import { useGame } from "../providers/GameProvider";
 
 const PanelContent = ({ close }) => {
-  const { questions, activeCategory, activeNumber } = useGame();
+  const { questions, activeCategory, activeNumber, markAnswered } = useGame();
   const [answerVisible, setAnswerVisible] = useState(false);
 
-  const question = questions?.[activeCategory]?.[activeNumber]?.question;
-  const answer = questions?.[activeCategory]?.[activeNumber]?.answer;
+  const { question, answer, alreadyAnswered } =
+    questions?.[activeCategory]?.[activeNumber] || {};
 
   return (
     <div tw="flex flex-col items-center justify-between h-full">
@@ -52,6 +52,7 @@ const PanelContent = ({ close }) => {
           type="button"
           onClick={() => {
             setAnswerVisible(false);
+            markAnswered(activeCategory, activeNumber, !alreadyAnswered);
             close();
           }}
           css={[
@@ -62,7 +63,7 @@ const PanelContent = ({ close }) => {
             `,
           ]}
         >
-          &#10003;
+          {alreadyAnswered ? <span>&#8617;</span> : <span>&#10003;</span>}
         </button>
       </div>
     </div>

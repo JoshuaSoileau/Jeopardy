@@ -4,7 +4,9 @@ import { useGame } from "../providers/GameProvider";
 import PanelContent from "./PanelContent";
 
 const Panel = ({ panelStyle = {}, close = () => {} }) => {
-  const { activeNumber } = useGame();
+  const { questions, activeNumber, activeCategory } = useGame();
+
+  const { alreadyAnswered } = questions?.[activeCategory]?.[activeNumber] || {};
 
   return (
     <div
@@ -34,7 +36,7 @@ const Panel = ({ panelStyle = {}, close = () => {} }) => {
             `,
           ]}
         >
-          {activeNumber}
+          {!alreadyAnswered ? activeNumber : ""}
         </div>
 
         {/* BACK */}

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useGame } from "../providers/GameProvider";
 import "twin.macro";
 import Panel from "./Panel";
+import PlayerList from "./PlayerList";
 
 const OPEN_TIMING = 500;
 const CLOSE_TIMING = 1000 + 100;
@@ -88,7 +89,7 @@ const Board = () => {
   };
 
   return (
-    <div tw="relative">
+    <div tw="relative w-auto flex flex-row items-center">
       <ul
         tw="grid grid-cols-5 gap-2  list-none  m-0 p-0 max-w-5xl"
         ref={gridRef}
@@ -105,7 +106,8 @@ const Board = () => {
         {VALUES.map((value, rowIndex) =>
           CATEGORIES.map((category, columnIndex) => {
             const gridNumber = columnIndex * 5 + rowIndex;
-            const { question } = questions[category][value] || {};
+            const { question, alreadyAnswered } =
+              questions?.[category]?.[value] || {};
 
             return (
               <li key={question} data-category={category} data-value={value}>
@@ -120,22 +122,23 @@ const Board = () => {
                     openPanelFrom(questionButtons.current[gridNumber]);
                   }}
                 >
-                  {value}
+                  {!alreadyAnswered ? value : ""}
                 </button>
               </li>
             );
           })
         )}
-      </ul>
-      <Panel
-        panelStyle={panelStyle}
-        close={() => {
-          const buttonRef = questionButtons.current[activeButtonNumber];
-          closePanelTo(buttonRef);
+        <Panel
+          panelStyle={panelStyle}
+          close={() => {
+            const buttonRef = questionButtons.current[activeButtonNumber];
+            closePanelTo(buttonRef);
 
-          setTimeout(() => setActiveNumber(0), CLOSE_TIMING);
-        }}
-      />
+            setTimeout(() => setActiveNumber(0), CLOSE_TIMING);
+          }}
+        />
+      </ul>
+      <PlayerList />
     </div>
   );
 };

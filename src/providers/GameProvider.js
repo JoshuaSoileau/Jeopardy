@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Qs from "../questions/12-15.json";
 
@@ -9,21 +9,64 @@ const GameContext = React.createContext({
 
 export const GameProvider = ({ children }) => {
   const [questions, setQuestions] = useLocalStorage("questions", Qs);
-  const [activeCategory, setActiveCategory] = useLocalStorage(
-    "activeCategory",
-    ""
-  );
-  const [activeNumber, setActiveNumber] = useLocalStorage("activeNumber", 0);
-  const [activeButtonNumber, setActiveButtonNumber] = useLocalStorage(
-    "activeButtonNumber",
-    0
-  );
+  const [activeCategory, setActiveCategory] = useState("");
+  const [activeNumber, setActiveNumber] = useState(0);
+  const [activeButtonNumber, setActiveButtonNumber] = useState(0);
+
+  const [players, setPlayers] = useLocalStorage("players", {
+    Josh: -100,
+    Ryan: 100,
+  });
+
+  const correct = (name) => {
+    if (!players[name]) return;
+
+    setPlayers({
+      ...players,
+      [name]: players[name] + Number(activeNumber),
+    });
+  };
+
+  const wrong = (name) => {
+    if (!players[name]) return;
+
+    setPlayers({
+      ...players,
+      [name]: players[name] - Number(activeNumber),
+    });
+  };
+
+  const addPlayer = (player) => {
+    setPlayers({
+      ...players,
+      [player]: 0,
+    });
+  };
+
+  const removePlayer = (player) => {
+    const { [player]: removedPlayer, ...remaining } = players;
+    setPlayers(remaining);
+  };
+
+  const markAnswered = (category, value, answered) => {
+    setQuestions({
+      ...questions,
+      [category]: {
+        ...questions[category],
+        [value]: {
+          ...questions[category][value],
+          alreadyAnswered: answered,
+        },
+      },
+    });
+  };
 
   return (
     <GameContext.Provider
       value={{
         questions,
         setQuestions,
+        markAnswered,
 
         activeCategory,
         setActiveCategory,
@@ -33,6 +76,12 @@ export const GameProvider = ({ children }) => {
 
         activeButtonNumber,
         setActiveButtonNumber,
+
+        players,
+        correct,
+        wrong,
+        addPlayer,
+        removePlayer,
       }}
     >
       {children}
