@@ -1,0 +1,92 @@
+{
+  "PHP": {
+    "100": {
+      "question": "This popular PHP framework powers over 50% of the internet",
+      "answer": "Wordpress"
+    },
+    "200": {
+      "question": "This is what the letters PHP stand for",
+      "answer": "Hypertext Preprocessor, PHP hypertext preprocessor, Personal Homepage"
+    },
+    "300": {
+      "question": "This is the name of the PHP operator denoted by a question mark followed by a colon.",
+      "answer": "Elvis operator"
+    },
+    "400": {
+      "question": "This PHP statement/function will include & evaluate a file, but only if it hasn't been included at least once before, and will throw a fatal error if the file does not exist",
+      "answer": "require_once"
+    }
+  },
+  "Javascript": {
+    "100": {
+      "question": "This array method determines whether an array contains a certain value among its entries",
+      "answer": ".includes() - .contains() is wrong (only a method on Node type or classList or other custom types, not arrays)"
+    },
+    "200": {
+      "question": "This ES6 operator is a shorthand way of combining multiples arrays or objects into one.",
+      "answer": "Spread operator"
+    },
+    "300": {
+      "question": "This JS operator permits reading the value of nested properties of objects without having to expressly validate that each property in the chain is valid.",
+      "answer": "Optional Chaining Operator (?.) - NOT coallescing operator"
+    },
+    "400": {
+      "question": "This is the mechanism by which JavaScript objects inherit features & properties from one another.",
+      "answer": "Prototypes"
+    }
+  },
+  "CSS": {
+    "100": {
+      "question": "This CSS technique involves including a series of images in a single image file, and shifting the value background-position around that file, in order to show different icons.",
+      "answer": "Icon Sprite Sheets"
+    },
+    "200": {
+      "question": "This CSS methodology treats page elements as objects, giving all these objects classes, and treating objects’ classes as single entities in style sheets",
+      "answer": "Object Oriented CSS (OOCSS)"
+    },
+    "300": {
+      "question": "This CSS unit of measurement is equal to the computed value of the line-height property of the element on which it is used, converted to an absolute length.",
+      "answer": "'lh' (for line-height, alot like em/rem for font size)"
+    },
+    "400": {
+      "question": "This media query value, which is useful in accessibility, lets you target users who prefer to not have a lot of movement on the screen in the form of animations.",
+      "answer": "prefers-reduced-motion"
+    }
+  },
+  "Web Community": {
+    "100": {
+      "question": "Tim Berners-Lee invented the World Wide Web in 1989 while working for this organization",
+      "answer": "CERN (European Organization for Nuclear Research)"
+    },
+    "200": {
+      "question": "This website, created by Chris Coyier, is a popular reference for people learning the ins and outs of CSS.",
+      "answer": "CSS-tricks.com"
+    },
+    "300": {
+      "question": "This open source contributor is the original author or Redux and is now a member of the Core React team at Facebook",
+      "answer": "Dan Abramov"
+    },
+    "400": {
+      "question": "This company is the author and maintainer of NextJS",
+      "answer": "Vercel (formerly Zeit)"
+    }
+  },
+  "Frameworks / Stacks": {
+    "100": {
+      "question": "This early javascript framework for building websites was Google's equivalent of React.js",
+      "answer": "Angular"
+    },
+    "200": {
+      "question": "This tech stack, made popular by static site generators, is the recommendation of many modern hosting providers like Netlify.",
+      "answer": "JAMstack"
+    },
+    "300": {
+      "question": "This opinionated framework was created by David Henemeyer Hanson (sp) in the early 2000s while he worked on Basecamp.",
+      "answer": "Ruby on Rails"
+    },
+    "400": {
+      "question": "This NextJS feature allows you to update pages by re-rendering them in the background as traffic flows in, as opposed to rebuilding the whole site at once.",
+      "answer": "Incremental Static Regeneration"
+    }
+  }
+}

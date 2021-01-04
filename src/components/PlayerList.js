@@ -27,7 +27,6 @@ const PlayerList = () => {
             <div tw="absolute left-4 top-1/2 flex flex-col justify-center text-white transform -translate-y-1/2 text-center">
               <button
                 onClick={() => {
-                  console.log("correct");
                   correct(name);
                 }}
               >
@@ -35,7 +34,6 @@ const PlayerList = () => {
               </button>
               <button
                 onClick={() => {
-                  console.log("wrong");
                   wrong(name);
                 }}
               >
