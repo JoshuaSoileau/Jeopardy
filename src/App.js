@@ -20,7 +20,7 @@ function App() {
           `,
         ]}
       >
-        <div tw="w-12xl mx-auto">
+        <div tw="w-full max-w-12xl mx-auto">
           <h1 tw="flex flex-row items-center  text-white text-xl text-8xl font-extrabold mb-16">
             <span
               css={[
