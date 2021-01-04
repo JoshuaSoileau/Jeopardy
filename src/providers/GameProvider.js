@@ -19,16 +19,16 @@ export const GameProvider = ({ children }) => {
   });
 
   const correct = (name) => {
-    if (!players[name]) return;
+    if (!Object.hasOwnProperty.call(players, name)) return;
 
     setPlayers({
       ...players,
-      [name]: players[name] + Number(activeNumber),
+      [name]: Number(players[name]) + Number(activeNumber),
     });
   };
 
   const wrong = (name) => {
-    if (!players[name]) return;
+    if (!Object.hasOwnProperty.call(players, name)) return;
 
     setPlayers({
       ...players,
