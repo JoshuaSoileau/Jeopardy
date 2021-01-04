@@ -15,10 +15,12 @@ function App() {
           <span
             css={[
               css`
-                text-shadow: -${OFFSET} -${OFFSET} 0 ${OUTLINE},
-                  -${OFFSET} ${OFFSET} 0 ${OUTLINE},
-                  ${OFFSET} -${OFFSET} 0 ${OUTLINE},
-                  ${OFFSET} ${OFFSET} 0 ${OUTLINE};
+                & {
+                  text-shadow: -${OFFSET} -${OFFSET} 0 ${OUTLINE},
+                    -${OFFSET} ${OFFSET} 0 ${OUTLINE},
+                    ${OFFSET} -${OFFSET} 0 ${OUTLINE},
+                    ${OFFSET} ${OFFSET} 0 ${OUTLINE};
+                }
               `,
             ]}
           >

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useGame } from "../providers/GameProvider";
-import tw, { css } from "twin.macro";
+import "twin.macro";
+import Panel from "./Panel";
 
 const Board = () => {
   const questionButtons = useRef(new Array(99));
@@ -15,7 +16,6 @@ const Board = () => {
   const [activeCategory, setActiveCategory] = useState("");
   const [activeNumber, setActiveNumber] = useState("");
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
-  const [answerVisible, setAnswerVisible] = useState(false);
 
   const categories = Object.keys(questions);
 
@@ -102,7 +102,6 @@ const Board = () => {
                     type="button"
                     tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-yellow-300 text-4xl break-words"
                     onClick={() => {
-                      setAnswerVisible(false);
                       setActiveNumber(number);
                       setActiveCategory(category);
                       setActiveButtonNumber(gridNumber);
@@ -117,66 +116,15 @@ const Board = () => {
           );
         })}
       </ul>
-      <div
-        className="panel"
-        css={[
-          tw`absolute transition-all ease-in-out overflow-hidden font-serif`,
-          css`
-            transform-style: preserve-3d;
-            perspective: 1000px;
-          `,
-        ]}
-        style={panelStyle}
-      >
-        <div tw="relative h-full">
-          <div
-            className="front"
-            css={[
-              tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  bg-blue-800  text-yellow-400 font-bold text-4xl break-words`,
-              css`
-                transform: rotateY(180deg);
-                backface-visibility: hidden;
-              `,
-            ]}
-          >
-            {activeNumber}
-          </div>
-          <div
-            className="back"
-            css={[
-              tw`absolute top-0 left-0  h-full w-full flex flex-col items-center justify-center  bg-blue-800 transition-all ease-in-out    text-white text-4xl px-12`,
-              css`
-                backface-visibility: hidden;
-              `,
-            ]}
-          >
-            <button
-              type="button"
-              onClick={() => {
-                const buttonRef = questionButtons.current[activeButtonNumber];
-                closePanelTo(buttonRef);
-              }}
-            >
-              {questions?.[activeCategory]?.[activeNumber]?.question}
-            </button>
-            <div tw="mt-16">
-              {answerVisible ? (
-                questions?.[activeCategory]?.[activeNumber]?.answer
-              ) : (
-                <button
-                  type="button"
-                  tw="underline"
-                  onClick={() => {
-                    setAnswerVisible(true);
-                  }}
-                >
-                  Show answer
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Panel
+        activeNumber={activeNumber}
+        activeCategory={activeCategory}
+        panelStyle={panelStyle}
+        close={() => {
+          const buttonRef = questionButtons.current[activeButtonNumber];
+          closePanelTo(buttonRef);
+        }}
+      />
     </div>
   );
 };
