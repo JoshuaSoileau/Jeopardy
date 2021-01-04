@@ -26,6 +26,7 @@ const Panel = ({
       style={panelStyle}
     >
       <div tw="relative h-full">
+        {/* FRONT */}
         <div
           className="front"
           css={[
@@ -40,6 +41,8 @@ const Panel = ({
         >
           {activeNumber}
         </div>
+
+        {/* BACK */}
         <div
           className="back"
           css={[

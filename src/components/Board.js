@@ -17,7 +17,14 @@ const Board = () => {
   const [activeNumber, setActiveNumber] = useState("");
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
 
-  const categories = Object.keys(questions);
+  const CATEGORIES = Object.keys(questions);
+  console.log({ CATEGORIES });
+  const QUESTIONS_PER_CATEGORY = Object.keys(questions[CATEGORIES[0]]).length;
+  console.log({ QUESTIONS_PER_CATEGORY });
+  const VALUES = [...Array(QUESTIONS_PER_CATEGORY)].map((_, index) =>
+    String(index * 100 + 100)
+  );
+  console.log({ VALUES });
 
   const shiftToLocation = ({ target, duration = 0, ...additional }) => {
     const top = target.offsetTop;
@@ -80,7 +87,7 @@ const Board = () => {
         ref={gridRef}
       >
         {/* Titles */}
-        {categories.map((category) => (
+        {CATEGORIES.map((category) => (
           <li key={category}>
             <div tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-white text-4xl break-words">
               {category}
@@ -88,32 +95,36 @@ const Board = () => {
           </li>
         ))}
 
+        {VALUES.map((value, rowIndex) =>
+          CATEGORIES.map((category, columnIndex) => {
+            const gridNumber = columnIndex * 5 + rowIndex;
+            const { question } = questions[category][value] || {};
+
+            return (
+              <li key={question} data-category={category} data-value={value}>
+                <button
+                  ref={(el) => (questionButtons.current[gridNumber] = el)}
+                  type="button"
+                  tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-yellow-300 text-4xl break-words"
+                  onClick={() => {
+                    setActiveNumber(value);
+                    setActiveCategory(category);
+                    setActiveButtonNumber(gridNumber);
+                    openPanelFrom(questionButtons.current[gridNumber]);
+                  }}
+                >
+                  {value}
+                </button>
+              </li>
+            );
+          })
+        )}
+
         {/* Columns */}
         {Object.entries(questions).map(([category, data], columnIndex) => {
-          return Object.entries(data).map(
-            ([number, questionObject], rowIndex) => {
-              const gridNumber = columnIndex * 5 + rowIndex;
-              const { question } = questionObject;
-
-              return (
-                <li key={question} data-category={category} data-value={number}>
-                  <button
-                    ref={(el) => (questionButtons.current[gridNumber] = el)}
-                    type="button"
-                    tw="flex items-center justify-center  w-full h-full min-h-48  px-16  text-center  bg-blue-800  text-yellow-300 text-4xl break-words"
-                    onClick={() => {
-                      setActiveNumber(number);
-                      setActiveCategory(category);
-                      setActiveButtonNumber(gridNumber);
-                      openPanelFrom(questionButtons.current[gridNumber]);
-                    }}
-                  >
-                    {number}
-                  </button>
-                </li>
-              );
-            }
-          );
+          return Object.entries(
+            data
+          ).map(([number, questionObject], rowIndex) => {});
         })}
       </ul>
       <Panel
