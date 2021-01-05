@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
+
 import Qs from "../questions/12-15.json";
+// import Qs from "../questions/1-7.json";
 
 const GameContext = React.createContext({
   questions: false,
@@ -14,8 +16,8 @@ export const GameProvider = ({ children }) => {
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
 
   const [players, setPlayers] = useLocalStorage("players", {
-    Josh: -100,
-    Ryan: 100,
+    // Josh: -100,
+    // Ryan: 100,
   });
 
   const correct = (name) => {

@@ -1,92 +1,112 @@
 {
-  "PHP": {
+  "DOM duh&nbsp;dah dum...": {
     "100": {
-      "question": "This popular PHP framework powers over 50% of the internet",
-      "answer": "Wordpress"
+      "question": "This DOM API function is attached to HTMLNodes and lets you tack on additional elements to the end of the target.",
+      "answer": "Element.appendChild()"
     },
     "200": {
-      "question": "This is what the letters PHP stand for",
-      "answer": "Hypertext Preprocessor, PHP hypertext preprocessor, Personal Homepage"
+      "question": "This is the state of a failed Promise. It better have a good reason.",
+      "answer": "Rejected. (A pending promise can either be fulfilled with a value, or rejected with a reason (error))"
     },
     "300": {
-      "question": "This is the name of the PHP operator denoted by a question mark followed by a colon.",
-      "answer": "Elvis operator"
+      "question": "Where am I? Look through the `window` and figure out this useful useful piece of information.",
+      "answer": "Location."
     },
     "400": {
-      "question": "This PHP statement/function will include & evaluate a file, but only if it hasn't been included at least once before, and will throw a fatal error if the file does not exist",
-      "answer": "require_once"
+      "question": "This powerful web API put the X in AJAX and helped usher in Web 2.0 and 'living documents'",
+      "answer": "XMLHttpRequest."
+    },
+    "500": {
+      "question": "This is the (short & sweet) JS that would allow you to grab all of the text on the entire page.",
+      "answer": "document.body.innerText"
     }
   },
-  "Javascript": {
+  "CSS Tricks": {
     "100": {
-      "question": "This array method determines whether an array contains a certain value among its entries",
-      "answer": ".includes() - .contains() is wrong (only a method on Node type or classList or other custom types, not arrays)"
+      "question": "Front-enders once employed multiple background images and nested `div`s to achieve the rounding effect possible with this one property.",
+      "answer": "Border radius."
     },
     "200": {
-      "question": "This ES6 operator is a shorthand way of combining multiples arrays or objects into one.",
-      "answer": "Spread operator"
+      "question": "Floated objects do not add to the height of the object they reside in properly. To fix it, one must...",
+      "answer": "Clear the floats / use a clearfix."
     },
     "300": {
-      "question": "This JS operator permits reading the value of nested properties of objects without having to expressly validate that each property in the chain is valid.",
-      "answer": "Optional Chaining Operator (?.) - NOT coallescing operator"
+      "question": "With flexbox, you can center an element on the page by setting these two properties to `center`",
+      "answer": "\"justify-content\" and \"align-items\""
     },
     "400": {
-      "question": "This is the mechanism by which JavaScript objects inherit features & properties from one another.",
-      "answer": "Prototypes"
+      "question": "Check out this flipping Jeopardy tile! This CSS property makes sure that when you flip an element in 3d space, you can't see the element's back side.",
+      "answer": "backface-visibility (: hidden;)"
+    },
+    "500": {
+      "question": "This is a group of APIs that give developers direct access to the CSS Object Model (CSSOM), enabling developers to write code the browser can parse as CSS",
+      "answer": "CSS Houdini"
     }
   },
-  "CSS": {
+  "Browserified": {
     "100": {
-      "question": "This CSS technique involves including a series of images in a single image file, and shifting the value background-position around that file, in order to show different icons.",
-      "answer": "Icon Sprite Sheets"
+      "question": "As of March, 2020 this browser commanded 4.42% of global market share",
+      "answer": "Firefox."
     },
     "200": {
-      "question": "This CSS methodology treats page elements as objects, giving all these objects classes, and treating objects’ classes as single entities in style sheets",
-      "answer": "Object Oriented CSS (OOCSS)"
+      "question": "With 38% of global market share, this operating system is number one.",
+      "answer": "Android (Windows at 35%, iOS at 14%)"
     },
     "300": {
-      "question": "This CSS unit of measurement is equal to the computed value of the line-height property of the element on which it is used, converted to an absolute length.",
-      "answer": "'lh' (for line-height, alot like em/rem for font size)"
+      "question": "This is what the acronym URL stands for",
+      "answer": "Uniform Resource Locator"
     },
     "400": {
-      "question": "This media query value, which is useful in accessibility, lets you target users who prefer to not have a lot of movement on the screen in the form of animations.",
-      "answer": "prefers-reduced-motion"
+      "question": "This browser, released in 1995, was the first to include a public release of Javascript.",
+      "answer": "Netscape navigator (2.0)"
+    },
+    "500": {
+      "question": "Webkit is the rendering engine behind Apple Safari, and Gecko is the engine behind Mozilla Firefox. This is the name of the Google-specific fork of Webkit, which powers Google Chrome.",
+      "answer": "Blink."
     }
   },
-  "Web Community": {
+  "Essential Elements": {
     "100": {
-      "question": "Tim Berners-Lee invented the World Wide Web in 1989 while working for this organization",
-      "answer": "CERN (European Organization for Nuclear Research)"
+      "question": "Yo dawg. Xzibit heard you liked browsing contexts. So he used this element to put a new browsing context inside your existing browsing context so you can browse contexts while you browse contexts.",
+      "answer": "<iframe>"
     },
     "200": {
-      "question": "This website, created by Chris Coyier, is a popular reference for people learning the ins and outs of CSS.",
-      "answer": "CSS-tricks.com"
+      "question": "This HTML element creates a collapsible \"accordion\"-like UI that lets use open/collapse content without the use of javascript.",
+      "answer": "<details> (and <summary>)"
     },
     "300": {
-      "question": "This open source contributor is the original author or Redux and is now a member of the Core React team at Facebook",
-      "answer": "Dan Abramov"
+      "question": "Want to bump up the size of some text? This now-obsolete element once used to do the trick.",
+      "answer": "<big> (like <small>)"
     },
     "400": {
-      "question": "This company is the author and maintainer of NextJS",
-      "answer": "Vercel (formerly Zeit)"
+      "question": "This HTML tag lets you create clickable areas on images, which can be treated as hyperlinks.",
+      "answer": "<map>"
+    },
+    "500": {
+      "question": "According to a random gist (with zero due diligence performed), the shortest valid html document includes a <!doctype html> tag and this one other element.",
+      "answer": "<!doctype html><title>This title is required.</title>"
     }
   },
-  "Frameworks / Stacks": {
+  "😳 JS&nbsp;Wat": {
     "100": {
-      "question": "This early javascript framework for building websites was Google's equivalent of React.js",
-      "answer": "Angular"
+      "question": "1 + 1 + \"1\"",
+      "answer": "\"21\""
     },
     "200": {
-      "question": "This tech stack, made popular by static site generators, is the recommendation of many modern hosting providers like Netlify.",
-      "answer": "JAMstack"
+      "question": "[] + []",
+      "answer": "\"\""
     },
     "300": {
-      "question": "This opinionated framework was created by David Henemeyer Hanson (sp) in the early 2000s while he worked on Basecamp.",
-      "answer": "Ruby on Rails"
+      "question": "{} + []",
+      "answer": "0"
     },
     "400": {
-      "question": "This NextJS feature allows you to update pages by re-rendering them in the background as traffic flows in, as opposed to rebuilding the whole site at once.",
-      "answer": "Incremental Static Regeneration"
+      "question": "typeof []",
+      "answer": "\"object\""
+    },
+    "500": {
+      "question": "Array(16).join(\"wat\" - 1) + \" Batman!\"",
+      "answer": "\"NaNNaNNaNNaNNaNNaNNaN NaNNaNNaNNaNNaNNaNNaNNaN Batman!\""
     }
   }
 }

@@ -27,7 +27,7 @@ const Panel = ({ panelStyle = {}, close = () => {} }) => {
         <div
           className="front"
           css={[
-            tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  min-h-48  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words`,
+            tw`absolute top-0 left-0  h-full w-full flex items-center justify-center   transition-all ease-in-out  min-h-40  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words`,
             css`
               & {
                 transform: rotateY(180deg);

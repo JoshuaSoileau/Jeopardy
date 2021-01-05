@@ -13,7 +13,7 @@ const PanelContent = ({ close }) => {
     <div tw="flex flex-col items-center justify-between h-full">
       {/* TOP */}
       <div tw="pt-12 flex flex-row justify-between w-full text-3xl">
-        <span>{activeCategory}</span>
+        <span dangerouslySetInnerHTML={{ __html: activeCategory }} />
         <span>{activeNumber}</span>
       </div>
 
