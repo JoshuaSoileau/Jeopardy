@@ -24,7 +24,7 @@ const PlayerList = () => {
             className="group"
             tw="text-4xl  flex flex-row items-center  rounded-lg  p-4 px-12 pr-20  transition-all  hover:(bg-white bg-opacity-10)  relative"
           >
-            <div tw="absolute left-4 top-1/2 flex flex-col justify-center text-white transform -translate-y-1/2 text-center">
+            <div tw="absolute left-4 top-1/2 flex flex-col justify-center text-white transform -translate-y-1/2 text-center opacity-0 group-hover:opacity-100">
               <button
                 onClick={() => {
                   correct(name);
@@ -40,7 +40,7 @@ const PlayerList = () => {
                 -
               </button>
             </div>
-            <div tw="rounded-full bg-gradient-to-r from-green-500 to-purple-400 text-gray-900 flex items-center justify-center w-24 h-24 mr-12  font-bold  text-5xl  ring-4 ring-white  border border-4 border-gray-900">
+            <div tw="rounded-full bg-gradient-to-r from-green-300 to-green-400 text-gray-900 flex items-center justify-center w-24 h-24 mr-12  font-bold  text-5xl  ring-4 ring-white  border border-4 border-gray-900">
               {name[0]}
             </div>
             <div>

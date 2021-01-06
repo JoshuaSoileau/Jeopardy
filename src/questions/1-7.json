@@ -27,7 +27,7 @@
       "answer": "Border radius."
     },
     "200": {
-      "question": "Floated objects do not add to the height of the object they reside in properly. To fix it, one must...",
+      "question": "Floated objects do not add to the height of the object they reside in properly, unless you do this...",
       "answer": "Clear the floats / use a clearfix."
     },
     "300": {
@@ -83,7 +83,7 @@
       "answer": "<map>"
     },
     "500": {
-      "question": "According to a random gist (with zero due diligence performed), the shortest valid html document includes a <!doctype html> tag and this one other element.",
+      "question": "According to a random github gist (with zero due diligence performed on my part), the shortest valid html document includes a <!doctype html> tag and this one other element.",
       "answer": "<!doctype html><title>This title is required.</title>"
     }
   },
