@@ -1,0 +1,24 @@
+{
+  "Bleeding Edge": {
+    "100": {
+      "question": "Some animations can cause dizziness and nausea in people with vestibular disorders. Media queries to the rescue.",
+      "answer": "@media (prefers-reduced-motion)"
+    },
+    "200": {
+      "question": "This experimental CSS property allows animations to be driven by a container’s scroll position.",
+      "answer": "@scroll-timeline"
+    },
+    "300": {
+      "question": "This modern image format is optimized for web environments. It boasts better image compression than webp, jpeg, png and gif - with a hard ‘G’.",
+      "answer": "AVIF"
+    },
+    "400": {
+      "question": "The new cookie store API has a more modern interface than document.cookie, and can also be used in these.",
+      "answer": "Service workers"
+    },
+    "500": {
+      "question": "This CSS property sets whether an element’s background extends underneath its border box, padding box or content box.",
+      "answer": "background-clip"
+    }
+  }
+}

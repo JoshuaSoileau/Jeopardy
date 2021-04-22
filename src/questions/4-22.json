@@ -1,0 +1,90 @@
+{
+  "Project People": {
+    "100": {
+      "question": "Mat Mullenweg",
+      "answer": "Wordpress"
+    },
+    "200": {
+      "question": "Redux",
+      "answer": "Dan Abramov"
+    },
+    "300": {
+      "question": "Evan You",
+      "answer": "VueJS"
+    },
+    "400": {
+      "question": "John Resig",
+      "answer": "jQuery"
+    },
+    "500": {
+      "question": "David Heinemeier Hansson",
+      "answer": "Ruby on Rails"
+    }
+  },
+  "Movies&nbsp;Worth CSS-ing": {
+    "100": {
+      "question": "A young Peruvian bear travels to London in search of a home, in this 2015 animated comedy.",
+      "answer": "Paddington Bear"
+    },
+    "200": {
+      "question": "In a colorful future, a cab driver (who is Bruce Willis) unwittingly becomes the central figure in this search for a legendary cosmic weapon to keep evil and Mr. Zorg (played by Gary Oldman) at bay.",
+      "answer": "Fifth Element"
+    },
+    "300": {
+      "question": "Two powerful mutants (Charles Xavier and Erik Lehnsherr) join together to stop a ruthless dictator from thrusting Russia and the U.S. into nuclear war.",
+      "answer": "X-men First Class."
+    },
+    "400": {
+      "question": "Keanu Reeves infiltrates a gang of bank-robbing surfers in this 1991 cult classic.",
+      "answer": "Point break"
+    },
+    "500": {
+      "question": "Steven Spielberg directs Whoopi Goldberg, a black Southern woman struggling to find her identity after suffering abuse from her father and others.",
+      "answer": "The Color Purple"
+    }
+  },
+  "Tricky CSS&nbsp;Sites": {
+    "100": {
+      "question": "Often a top 100 related search results, but that doesn’t mean devs love it.",
+      "answer": "W3Schools.com"
+    },
+    "200": {
+      "question": "Browser support tables for modern web technologies, including CSS.",
+      "answer": "CanIUse.com"
+    },
+    "300": {
+      "question": "This site demonstrates what can be accomplished by only changing the CSS.",
+      "answer": "CSS Zen Garden (also accept 'Style Stages')"
+    },
+    "400": {
+      "question": "Launched in 2005 when a small team of idealists set out to create a new, free, community-built online resource for all web developers.",
+      "answer": "Mozilla Developer Network (MDN docs)"
+    },
+    "500": {
+      "question": "This site shows you CSS alternatives for CommonJS UI components.",
+      "answer": "YouMightNotNeedJs.com"
+    }
+  },
+  "Oh&nbsp;node you&nbsp;didn't": {
+    "100": {
+      "question": "Miss the browser? This function might console you. It works pretty much the same in Node.",
+      "answer": "console.log()"
+    },
+    "200": {
+      "question": "You have to use ‘require’ instead of ‘import’ in Node because it relies on this module system.",
+      "answer": "CommonJS"
+    },
+    "300": {
+      "question": "Node.js runs on this JavaScript engine, which is also at the core of Google Chrome.",
+      "answer": "V8"
+    },
+    "400": {
+      "question": "‘this’ in the browser’s global scope refers to ‘window’, but in Node it refers to…",
+      "answer": "The current module (also accept `document`)"
+    },
+    "500": {
+      "question": "If you want to read an environment variable or exit from a Node program, you must use this core module.",
+      "answer": "`process` (as in process.env)"
+    }
+  }
+}

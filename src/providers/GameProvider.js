@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 // import Qs from "../questions/12-15.json";
-import Qs from "../questions/1-7.json";
+// import Qs from "../questions/1-7.json";
+import Qs from "../questions/4-22.json";
 
 const GameContext = React.createContext({
   questions: false,

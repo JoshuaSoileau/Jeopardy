@@ -91,14 +91,14 @@ const Board = () => {
   return (
     <div tw="relative w-auto flex flex-row items-center">
       <ul
-        tw="grid grid-cols-5 gap-2  list-none  m-0 p-0 max-w-5xl"
+        tw="grid grid-cols-4 gap-2  list-none  m-0 p-0 max-w-5xl"
         ref={gridRef}
       >
         {/* Titles */}
         {CATEGORIES.map((category) => (
           <li key={category}>
             <div
-              tw="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-white text-4xl break-words"
+              tw="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-white text-3xl break-words"
               dangerouslySetInnerHTML={{ __html: category }}
             ></div>
           </li>
