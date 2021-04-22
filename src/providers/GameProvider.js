@@ -17,8 +17,8 @@ export const GameProvider = ({ children }) => {
   const [activeButtonNumber, setActiveButtonNumber] = useState(0);
 
   const [players, setPlayers] = useLocalStorage("players", {
-    Jim: 0,
-    Bob: 0,
+    Jane: 0,
+    Doe: 0,
   });
 
   const correct = (name) => {
