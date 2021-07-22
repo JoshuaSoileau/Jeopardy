@@ -3,8 +3,6 @@ import React from "react";
 import { css, GlobalStyles } from "twin.macro";
 import Board from "./components/Board";
 import { GameProvider } from "./providers/GameProvider";
-const OUTLINE = "sandybrown";
-const OFFSET = "3px";
 
 function App() {
   return (
