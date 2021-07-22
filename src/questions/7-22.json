@@ -1,0 +1,112 @@
+{
+  "Project People": {
+    "100": {
+      "question": "This person was the primary stakeholder behind the original Allconnect Widget project",
+      "answer": "Chris Brajer"
+    },
+    "200": {
+      "question": "A prolific content creator, this person holds the record for the most blog posts written on Allconnect.com with 113.",
+      "answer": "Joe Supan"
+    },
+    "300": {
+      "question": "This person has the longest tenure of any individual on the Allconnect.com team",
+      "answer": "Ryan Weber"
+    },
+    "400": {
+      "question": "This is the engineer who has had the most commits to our codebase in the year 2021",
+      "answer": "Timothy Gorsuch"
+    },
+    "500": {
+      "question": "An Allconnect.com-specific Fantasy Football league has been running for several years. Who cares who the winners were, name 2 of the people who have come in last in the league.",
+      "answer": "Anthony Bosco, Carlo Fiore, Andrew Serafin/Nicole Cleary"
+    }
+  },
+  "What the&nbsp;tech?": {
+    "100": {
+      "question": "This is the name of the technology which powers our phone numbers, which we crashed for all of Red Ventures in the spring of 2019.",
+      "answer": "Fuse"
+    },
+    "200": {
+      "question": "This proprietary CMS is a big success story for internal software, but it started as the product catalog software for just Allconnect.",
+      "answer": "Harbinger"
+    },
+    "300": {
+      "question": "This is the name of the editor inside Wordpress that our content team uses to build our beautiful website.",
+      "answer": "Gutenberg"
+    },
+    "400": {
+      "question": "The first version of the Allconnect-branded partner Cart flows were powered by this internal RV software tool, which powers our phone agent sales flows to this day.",
+      "answer": "Atom"
+    },
+    "500": {
+      "question": "This is the CMS system that Allconnect used before Wordpress.",
+      "answer": "Drupal"
+    }
+  },
+  "Allconnect through the years": {
+    "100": {
+      "question": "Since the acquisition of Allconnect by RV, what have been the primary brand colors of Allconnect through their different designs?",
+      "answer": "Green -> Purple -> Blue/white"
+    },
+    "200": {
+      "question": "Name 3 of the 5 Telco partners which have had an Allconnect-branded, RV-hosted digital buy flow.",
+      "answer": "ATT, DirecTV, HughesNet, Frontier, Xfinity, {+ kinda Spectrum?}"
+    },
+    "300": {
+      "question": "In a neverending game of organizational ping-pong, Allconnect has bounced between several different RV verticals in it's years here. Name 3 of those verticals.",
+      "answer": "Telco, Media & Communications (MAC), Allconnect, Connected Services, RV Home"
+    },
+    "400": {
+      "question": "This partnership between MyMove and Allconnect.com lets utility providers send us digital traffic via custom landing pages.",
+      "answer": "Movers Connection Center (MCC)"
+    },
+    "500": {
+      "question": "This was the name of the software that preceded Harbinger for powering our product results.",
+      "answer": "ACDC"
+    }
+  },
+  "Show some initiative": {
+    "100": {
+      "question": "This was the initiative to grow our organic search traffic by creating of thousands of webpages for each of the various cities across the US.",
+      "answer": "Geo Page project"
+    },
+    "200": {
+      "question": "After literally years of work building out bespoke digital buyflows for our partners, this is the initiative to throw it all away and link off to the partner carts directly.",
+      "answer": "Cart de-integration"
+    },
+    "300": {
+      "question": "This is the name of the on-site optimization effort that involved showing product-level information from multiple providers on the same page.",
+      "answer": "Comparison Shopping"
+    },
+    "400": {
+      "question": "Effectively a full-site redesign, this was a months-long, iterative redesign of all the transactional pages of our site.",
+      "answer": "Grid Project"
+    },
+    "500": {
+      "question": "This was a major initiative run by the \"Identity marketing\" team as a pilot test on Allconnect.com, to see how effectively we could capture email addresses. It was also the reason there were so many baseball-related puns on Allconnect at the time.",
+      "answer": "Practice field"
+    }
+  },
+  "Josh remembers things": {
+    "100": {
+      "question": "This was a common way for the engineering team to blow off steam on friday afternoons",
+      "answer": "Ping pong (or bowling)"
+    },
+    "200": {
+      "question": "Much to the chagrin of every other functional group on the floor, Ryan Weber used to be seen riding one of these down the hallway with regularity",
+      "answer": "A scooter"
+    },
+    "300": {
+      "question": "Pre-covid, most of the hardest technical problems behind Allconnect.com were solved during water-cooler conversations at this location",
+      "answer": "The hut behind RV3"
+    },
+    "400": {
+      "question": "For years, an ex-AC engineer named Justin used to brag about bowling a \"turkey\" in front of this celebrity, who just happened to be passing by, in the basement of RV3. These claims remain unverified.",
+      "answer": "Michael Jordan"
+    },
+    "500": {
+      "question": "Two aspiring new Allconnect teammates scheduled a meet & greet with Josh when they first joined the team, which he promptly forgot about, ghosting them in the RV3 cafe. He still feels guilty about this to this day. Name either of those 2 teammates.",
+      "answer": "Andrew Diehl and Yemi Kolawole"
+    }
+  }
+}

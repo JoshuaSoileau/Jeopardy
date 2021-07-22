@@ -40,7 +40,7 @@ const PlayerList = () => {
                 -
               </button>
             </div>
-            <div tw="rounded-full bg-gradient-to-r from-green-300 to-green-400 text-gray-900 flex items-center justify-center w-24 h-24 mr-12  font-bold  text-5xl  ring-4 ring-white  border border-4 border-gray-900">
+            <div tw="rounded-full bg-gradient-to-r from-green-300 to-green-400 text-gray-900 flex items-center justify-center w-16 h-16 mr-12  font-bold  text-3xl  ring-4 ring-white  border border-4 border-gray-900">
               {name[0]}
             </div>
             <div>
