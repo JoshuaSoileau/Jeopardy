@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { useGame } from "../providers/GameProvider";
-import "twin.macro";
 import Panel from "./Panel";
 import PlayerList from "./PlayerList";
 
@@ -89,16 +88,23 @@ const Board = () => {
   };
 
   return (
-    <div tw="relative w-auto flex flex-row items-center">
+    <div className="relative w-auto flex flex-row items-center">
       <ul
-        tw="grid grid-cols-5 gap-2  list-none  m-0 p-0 max-w-5xl"
+        className={[
+          "grid gap-2  list-none  m-0 p-0 max-w-5xl",
+          CATEGORIES?.length === 3 && "grid-cols-3",
+          CATEGORIES?.length === 4 && "grid-cols-4",
+          CATEGORIES?.length === 5 && "grid-cols-5",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         ref={gridRef}
       >
         {/* Titles */}
         {CATEGORIES.map((category) => (
           <li key={category}>
             <div
-              tw="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-white text-3xl break-words"
+              className="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-white text-3xl break-words"
               dangerouslySetInnerHTML={{ __html: category }}
             ></div>
           </li>
@@ -115,7 +121,7 @@ const Board = () => {
                 <button
                   ref={(el) => (questionButtons.current[gridNumber] = el)}
                   type="button"
-                  tw="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words"
+                  className="flex items-center justify-center  w-full h-full min-h-40  px-16  text-center  bg-blue-700  text-yellow-300 text-4xl break-words"
                   onClick={() => {
                     setActiveNumber(value);
                     setActiveCategory(category);

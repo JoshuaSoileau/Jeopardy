@@ -1,3 +1,6 @@
 const { override, addBabelPlugin } = require("customize-cra");
 
-module.exports = override(addBabelPlugin("styled-jsx/babel"));
+module.exports = function override(config, env) {
+  //do stuff with the webpack config...
+  return config;
+};

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import useSound from "use-sound";
-import tw, { css } from "twin.macro";
 
 import { useGame } from "../providers/GameProvider";
 import correctSound from "../sounds/correct.mp3";
@@ -22,23 +21,23 @@ const PanelContent = ({ close }) => {
     questions?.[activeCategory]?.[activeNumber] || {};
 
   return (
-    <div tw="flex flex-col items-center justify-between h-full  overflow-hidden">
+    <div className="flex flex-col items-center justify-between h-full  overflow-hidden">
       {/* TOP */}
-      <div tw="pt-12 flex flex-row justify-between w-full text-3xl">
+      <div className="pt-12 flex flex-row justify-between w-full text-3xl">
         <span dangerouslySetInnerHTML={{ __html: activeCategory }} />
         <span>{activeNumber}</span>
       </div>
 
       {/* CENTER */}
-      <div tw="text-center">
+      <div className="text-center">
         <p>{question}</p>
-        <div tw="mt-16">
+        <div className="mt-16">
           {answerVisible ? (
             answer
           ) : (
             <button
               type="button"
-              tw="underline"
+              className="underline"
               onClick={() => {
                 setAnswerVisible(true);
               }}
@@ -50,7 +49,7 @@ const PanelContent = ({ close }) => {
       </div>
 
       {/* BOTTOM */}
-      <div tw="pb-12 flex flex-row justify-between w-full text-5xl">
+      <div className="pb-12 flex flex-row justify-between w-full text-5xl">
         <button
           type="button"
           onClick={() => {
@@ -60,31 +59,34 @@ const PanelContent = ({ close }) => {
         >
           &larr;
         </button>
-        <div tw="flex flex-col text-base">
+        <div className="flex flex-col text-base">
           <button
             type="button"
-            css={[
-              tw`flex my-2 items-center`,
-              !correctKeypress && tw`opacity-20 hover:opacity-100`,
-            ]}
+            className={[
+              "flex my-2 items-center",
+              !correctKeypress && `opacity-20 hover:opacity-100`,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            style={{}}
             onClick={playCorrectSound}
           >
             Press
-            <div tw="rounded-lg border border-white border-solid w-8 h-8  flex items-center justify-center  mx-4">
+            <div className="rounded-lg border border-white border-solid w-8 h-8  flex items-center justify-center  mx-4">
               Y
             </div>{" "}
             for correct
           </button>
           <button
             type="button"
-            css={[
-              tw`flex my-2 items-center`,
-              !wrongKeypress && tw`opacity-20 hover:opacity-100`,
+            className={[
+              "flex my-2 items-center",
+              !wrongKeypress && `opacity-20 hover:opacity-100`,
             ]}
             onClick={playWrongSound}
           >
             Press
-            <div tw="rounded-lg border border-white border-solid w-8 h-8  flex items-center justify-center  mx-4">
+            <div className="rounded-lg border border-white border-solid w-8 h-8  flex items-center justify-center  mx-4">
               N
             </div>{" "}
             for wrong
@@ -98,13 +100,9 @@ const PanelContent = ({ close }) => {
             markAnswered(activeCategory, activeNumber, !alreadyAnswered);
             close();
           }}
-          css={[
-            css`
-              & {
-                font-family: system-ui;
-              }
-            `,
-          ]}
+          style={{
+            fontFamily: "system-ui",
+          }}
         >
           {alreadyAnswered ? <span>&#8617;</span> : <span>&#10003;</span>}
         </button>
